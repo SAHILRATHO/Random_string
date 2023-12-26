@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendomm String</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <h1>Gunrate string</h1>
+
+        <div class="text">
+            <label for="v1"> Enter Tha Number:</label>
+            <input type="number" id="v1"><br> <br>
+        </div>
+
+        <div class="btn">
+            <input type="button" id="enter" value="Genrate" onclick="GenrateSaring()">
+
+        </div>
+        <div class="text">
+            <p id="sum"></p>
+        </div>
+    </div>
+    <script>
+        function GenrateSaring() {
+           
+            var length = parseInt(document.getElementById("v1").value)
+            const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+            var result = '';
+           
+
+            for (let i = 0; i < length; i++) {
+                    const randomIndex = Math.floor(Math.random() * charset.length);
+                    result += charset[randomIndex];
+                }
+                document.getElementById("sum").innerHTML = `${result}`
+        }
+    </script>
+</body>
+
+</html>
